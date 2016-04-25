@@ -29,6 +29,9 @@ import Home from './components/Home'
 export default {
   components: {
     Home
+  },
+  data: {
+    showModal: false
   }
 }
 
@@ -65,7 +68,7 @@ html {
 }
 
 body {
-  display: flex;
+  //display: flex;
   align-items: center;
   justify-content: center;
   height: 100%;

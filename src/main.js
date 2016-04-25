@@ -3,6 +3,7 @@ import App from './App.vue'
 import Home from './components/Home.vue'
 import TimeEntries from './components/TimeEntries.vue'
 import LogTime from './components/LogTime.vue'
+import Modal from './components/Modal.vue'
 
 import VueRouter from 'vue-router'
 import VueResource from 'vue-resource'
@@ -12,6 +13,21 @@ import VueResource from 'vue-resource'
 Vue.use(VueResource)
 Vue.use(VueRouter)
 
+// register modal component
+Vue.component('modal', {
+  template: Modal.template,
+  props: {
+    show: {
+      type: Boolean,
+      required: true,
+      twoWay: true
+    }
+  }
+})
+
+//Vue.component('modal', Modal);
+
+ // Routing!
 const router = new VueRouter()
 
 // Pointing routes to the components they should use
@@ -35,12 +51,3 @@ router.redirect({
 })
 
 router.start(App, '#app')
-/*
-import Vue from 'vue'
-import App from './App'
-
-new Vue({
-  el: 'body',
-  components: { App }
-})
-*/

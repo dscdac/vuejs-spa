@@ -60,10 +60,12 @@
       </div>
 
     </div>
-<!--
-     <button id="show-modal" @click="showQR">Show Modal</button>
-     <modal :show.sync="showModal"></modal>
--->
+
+    <button class='btn btn-primary' id="show-modal" @click="showModal = true">Show Modal</button>
+    <modal :show.sync="showModal">
+      <h3 slot="header">Hola modal!</h3>
+    </modal>
+
   </div>
 </template>
 
