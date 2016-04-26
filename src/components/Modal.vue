@@ -34,7 +34,8 @@
 
 export default {
   data: {
-    showModal: false
+    showModal: false,
+    show: false
   }
 }
 </script>
