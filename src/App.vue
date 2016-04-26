@@ -24,6 +24,14 @@
 </template>
 
 <script>
+import Vue from 'vue'
+
+new Vue({
+  data: {
+    showModal: false
+  }
+});
+
 import Home from './components/Home'
 
 export default {

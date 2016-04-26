@@ -29,6 +29,17 @@
   </div>
 </template>
 
+
+<script>
+
+export default {
+  data: {
+    showModal: false
+  }
+}
+</script>
+
+
 <style>
   .modal-mask {
     position: fixed;

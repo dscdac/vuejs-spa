@@ -8,6 +8,7 @@ import Modal from './components/Modal.vue'
 import VueRouter from 'vue-router'
 import VueResource from 'vue-resource'
 
+
 // We want to apply VueResource and VueRouter
 // to our Vue instance
 Vue.use(VueResource)
