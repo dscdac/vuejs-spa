@@ -31,6 +31,18 @@
         />
       </div>
     </div>
+
+    <div class="form-group">
+      <div class="col-sm-12">
+        <label>Opinion</label>
+        <v-select>
+          <v-option value="Good">Good :-)</v-option>
+          <v-option value="Neutral">Neutral :-|</v-option>
+          <v-option value="Bad">Bad :-(</v-option>
+        </v-select>
+      </div>
+    </div>
+
     <button class="btn btn-primary" @click="save()">Save</button>
     <button v-link="'/time-entries'" class="btn btn-danger">Cancel</button>
     <hr>
@@ -38,6 +50,8 @@
 </template>
 
 <script>
+  import {v-select} from 'vue-strap'
+
   export default {
     data () {
       return {
@@ -56,11 +70,23 @@
     methods: {
       save () {
         let timeEntry = this.timeEntry
-        // We dispatch the timeEntry so it can be pushed
-        // onto the timeEntries array in the parent component
-        this.$dispatch('timeUpdate', timeEntry)
-        this.timeEntry = {}
+
+        if (timeEntry){
+          console.log("Time Entry!");
+          console.log(timeEntry);
+          // We dispatch the timeEntry so it can be pushed
+          // onto the timeEntries array in the parent component
+          this.$dispatch('timeUpdate', timeEntry)
+          this.timeEntry = {}
+        }else{
+          console.log("Está vacío");
+        }
       }
+    },
+    components:
+    {
+      'v-select':v-select,
+
     }
   }
 </script>

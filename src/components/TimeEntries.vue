@@ -60,8 +60,14 @@
       </div>
 
     </div>
-
-    <button class='btn btn-primary' id="show-modal" @click="showModal = true">Show Modal</button>
+    <popover
+      trigger="hover"
+      effect="fade"
+      placement="bottom"
+      title="Un botón!"
+      content="Al pulsarlo queremos que aparezca un modal">
+      <button class='btn btn-primary' id="show-modal" @click="showModal = true">Show Modal</button>
+    </popover>
     <modal :show.sync="showModal">
       <h3 slot="header">Hola modal!</h3>
     </modal>
@@ -90,6 +96,9 @@
 </style>
 
 <script>
+
+  import { popover } from 'vue-strap'
+
   export default {
     data () {
       // We want to start with an existing time entry
@@ -105,6 +114,7 @@
         date: '2016-04-21'
       }
       return {
+        showModal = false,
         // Start out with the existing entry
         // by placing it in the array
         timeEntries: [existingEntry]
@@ -125,6 +135,9 @@
         this.timeEntries.push(timeEntry)
         return true
       }
+    },
+    components:{
+      'popover': popover
     }
   }
 </script>

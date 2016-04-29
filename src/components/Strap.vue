@@ -33,8 +33,13 @@ export default {
     'slider': slider,
     'modal': modal,
     'popover': popover
+  },
+  data() {
+    return {checked: false}
   }
 };
+
+//let checked=false;
 </script>
 
 
